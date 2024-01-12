@@ -1,0 +1,10 @@
+server:
+  port: 8091
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/basic_platform?allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: mysql8@2022
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
