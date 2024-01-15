@@ -1,14 +1,15 @@
 import cn.hutool.core.util.RandomUtil;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.wray.work.common.UserUtils;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,7 +21,7 @@ import java.util.Date;
  * @since 2022/8/4
  */
 @Component
-public class SysBusinessSnDao extends ServiceImpl<SysBusinessSnMapper, SysBusinessSn> {
+public class SysBusinessSnDao extends ServiceImpl<SysBusinessSnMapper, SysBusinessSn> implements InitializingBean {
 
     /**
      * 业务编号格式（保留3位数）
@@ -37,11 +38,11 @@ public class SysBusinessSnDao extends ServiceImpl<SysBusinessSnMapper, SysBusine
      */
     private static final SimpleDateFormat BUSINESS_SN_DEFAULT_DATE_FORMAT = new SimpleDateFormat("yyyyMMdd");
 
-    @Resource
+    @Autowired
     private PlatformTransactionManager transactionManager;
 
-    @PostConstruct
-    public void init() {
+    @Override
+    public void afterPropertiesSet() {
         // 校验业务编号枚举是否合规
         SysBusinessSnEnum.checkCodeValidation();
     }
