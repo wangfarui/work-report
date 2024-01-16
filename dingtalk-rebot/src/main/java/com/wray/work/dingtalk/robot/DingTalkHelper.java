@@ -1,7 +1,7 @@
 package com.wray.work.dingtalk.robot;
 
-import com.wyyt.ebc.common.utils.ApplicationContextUtils;
-import com.wyyt.ebc.common.utils.ExceptionUtils;
+import com.wray.work.common.ApplicationContextUtils;
+import com.wray.work.common.ExceptionUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

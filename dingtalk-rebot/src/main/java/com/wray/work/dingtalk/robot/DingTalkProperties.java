@@ -1,11 +1,11 @@
 package com.wray.work.dingtalk.robot;
 
 import com.ctrip.framework.apollo.model.ConfigChangeEvent;
-import com.wyyt.ebc.common.utils.ExceptionUtils;
+import com.wray.work.common.ExceptionUtils;
+import io.micrometer.common.util.StringUtils;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

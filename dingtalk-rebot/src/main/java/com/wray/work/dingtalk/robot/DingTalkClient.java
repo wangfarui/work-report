@@ -45,7 +45,8 @@ public class DingTalkClient {
     /**
      * 发送钉钉消息
      *
-     * @param request 机器人消息对象
+     * @param request  机器人消息对象
+     * @param canApply 是否需要发送钉钉机器人消息
      */
     public void send(final DingTalkSendRequest request, boolean canApply) {
         if (canApply) {
